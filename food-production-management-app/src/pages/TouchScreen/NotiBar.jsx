@@ -4,17 +4,17 @@ const NotiBar = () => {
   return (
     <Box
       display="flex"
-      justifyContent="center"
+      flexDirection="column"
       alignItems="center"
-      sx={{ borderRadius: 10, background: "#E8EEF6", width: 250 }}
+      sx={{
+        borderRadius: 10,
+        background: "#E8EEF6",
+        width: 410,
+        border: "10px solid transparent",
+      }}
     >
-      <Box>
-        <Typography>Notification</Typography>
-      </Box>
-      <Divider variant="middle" orientation="horizontal"/>
-      <Box>
-        <Typography>test</Typography>
-      </Box>
+      <Typography sx={{ fontSize: 40 }}>Notification</Typography>
+      <Divider sx={{ width: "90%", marginTop: 1 }} />
     </Box>
   )
 }

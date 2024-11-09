@@ -15,7 +15,14 @@ const IssuesSelect = () => {
           id="issue-select"
           value={issue}
           onChange={handleChange}
-          sx={{ width: 200, height: 25, marginLeft: 6, background: "white" }}
+          sx={{
+            width: 400,
+            height: 60,
+            marginLeft: 12,
+            background: "white",
+            fontSize: 35,
+            borderRadius: "15px",
+          }}
         >
           <MenuItem value="EquipmentMalfunction">
             Equipment Malfunction

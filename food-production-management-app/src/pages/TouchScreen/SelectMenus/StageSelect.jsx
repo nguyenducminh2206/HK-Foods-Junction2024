@@ -15,7 +15,14 @@ const StagesSelect = () => {
           id="stage-select"
           value={stage}
           onChange={handleChange}
-          sx={{ marginLeft: 4, width: 200, height: 25, background: "white" }}
+          sx={{
+            marginLeft: 6,
+            width: 400,
+            height: 60,
+            background: "white",
+            fontSize: 35,
+            borderRadius: "15px",
+          }}
         >
           <MenuItem value="PrePro">Preproduction</MenuItem>
           <MenuItem value="Cooking">Cooking</MenuItem>
