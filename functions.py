@@ -113,7 +113,7 @@ def combined_data(cooking_df, storage_df):
     return combined_df
 
 
-def visualize_data_cooking(sheet_name, xls, product_name='', threshold=''):
+def visualize_data_cooking(sheet_name, xls, product_name='', threshold=0):
     """
     Visualize data for batches with a weight loss over the threshold.
 
@@ -121,20 +121,33 @@ def visualize_data_cooking(sheet_name, xls, product_name='', threshold=''):
         sheet_name (str): Name of the sheet to extract data from.
         xls (ExcelFile): Excel file object.
         product_name (str): Optional name of the product for the title.
+        threshold (float): Threshold for weight change (kg) to filter batches.
     """
     # Process the data to calculate losses
     data = show_dataframe(sheet_name, xls)
 
     # Filter to include only batches with weight loss over threshold
-    filter_data = data[data['Weight Change (kg)'] > threshold]
+    filtered_data = data[data['Weight Change (kg)'] > threshold].copy()
+
+    # Format 'Description' to remove time if it's a datetime
+    if pd.api.types.is_datetime64_any_dtype(filtered_data['Description']):
+        filtered_data['Description'] = filtered_data['Description'].dt.strftime(
+            '%Y-%m-%d')
+
+    # Combine 'Batch Info' and 'Description' for labeling
+    filtered_data.loc[:, 'Batch Label'] = (
+        filtered_data['Batch Info'].astype(
+            str) + " (" + filtered_data['Description'].astype(str) + ")"
+    )
 
     # Plot the filtered data
     plt.figure(figsize=(12, 6))
-    plt.bar(filter_data['Batch Info'], filter_data['Before Cooking (kg)'],
+    plt.bar(filtered_data['Batch Label'], filtered_data['Before Cooking (kg)'],
             label='Before Cooking (kg)', alpha=0.7)
-    plt.bar(filter_data['Batch Info'], filter_data['After Cooking (kg)'],
+    plt.bar(filtered_data['Batch Label'], filtered_data['After Cooking (kg)'],
             label='After Cooking (kg)', alpha=0.7)
-    plt.xlabel('Batch Info')
+
+    plt.xlabel('Batch Info (Description)')
     plt.ylabel('Weight (kg)')
     plt.title(
         f'Weight Before and After Cooking of {product_name} Production per Batch')
