@@ -16,9 +16,9 @@ const StagesSelect = () => {
           value={stage}
           onChange={handleChange}
           sx={{
-            marginLeft: 6,
+            marginLeft: 9,
             width: 400,
-            height: 60,
+            height: 40,
             background: "white",
             fontSize: 35,
             borderRadius: "15px",

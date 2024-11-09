@@ -65,6 +65,7 @@ const SignupForm = () => {
                 color: "#0C2D53",
                 borderRadius: 30,
               }}
+              onClick={() => window.location.href = "/noti"}
             >
               Sign up
             </Button>

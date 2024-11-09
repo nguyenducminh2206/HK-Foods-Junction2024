@@ -13,7 +13,7 @@ const NotiBar = () => {
         border: "10px solid transparent",
       }}
     >
-      <Typography sx={{ fontSize: 40 }}>Notification</Typography>
+      <Typography sx={{ fontSize: 40 }}>Notifications</Typography>
       <Divider sx={{ width: "90%", marginTop: 1 }} />
     </Box>
   )

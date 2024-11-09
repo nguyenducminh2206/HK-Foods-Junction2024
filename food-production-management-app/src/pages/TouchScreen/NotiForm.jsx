@@ -11,15 +11,15 @@ const NotiForm = () => {
           border: "30px solid transparent",
           background: "#E8EEF6",
           width: 900,
-          height: 690,
+          height: 660,
         }}
       >
-        <Typography sx={{ fontSize: 45 }}>
-          Batch No.:
+        <Typography sx={{ fontSize: 25, marginBottom: 2 }}>
+          Batch/ID No.:
           <TextField
             sx={{
               "& .MuiInputBase-root": {
-                height: 60,
+                height: 40,
                 borderRadius: "15px",
                 marginLeft: 2,
                 width: 400,
@@ -29,11 +29,11 @@ const NotiForm = () => {
             }}
           ></TextField>
         </Typography>
-        <Typography sx={{ fontSize: 45 }}>
+        <Typography sx={{ fontSize: 25, marginBottom: 2 }}>
           Issues
           <IssuesSelect />
         </Typography>
-        <Typography sx={{ fontSize: 45 }}>
+        <Typography sx={{ fontSize: 25, marginBottom: 2 }}>
           Priority
           <Slider
             aria-label="Priority"
@@ -44,13 +44,13 @@ const NotiForm = () => {
             marks
             min={0}
             max={10}
-            sx={{ width: 400, marginLeft: 11 }}
+            sx={{ width: 400, marginLeft: 12 }}
           ></Slider>
         </Typography>
-        <Typography sx={{ fontSize: 45 }}>
+        <Typography sx={{ fontSize: 25, marginBottom: 2 }}>
           Send to: <StagesSelect />
         </Typography>
-        <Typography sx={{ fontSize: 45 }}>Description (optional):</Typography>
+        <Typography sx={{ fontSize: 25, marginBottom: 2 }}>Description (optional):</Typography>
         <TextField
           multiline
           rows={10}

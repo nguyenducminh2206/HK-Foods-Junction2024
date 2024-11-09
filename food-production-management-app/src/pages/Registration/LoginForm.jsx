@@ -28,6 +28,7 @@ const LoginForm = ({ handleSubmit }) => {
             color: "#0C2D53",
             borderRadius: 30,
           }}
+          onClick={() => window.location.href = "/noti"}
         >
           Log in
         </Button>

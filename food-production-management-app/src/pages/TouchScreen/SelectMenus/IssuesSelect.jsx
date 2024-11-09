@@ -17,7 +17,7 @@ const IssuesSelect = () => {
           onChange={handleChange}
           sx={{
             width: 400,
-            height: 60,
+            height: 40,
             marginLeft: 12,
             background: "white",
             fontSize: 35,
