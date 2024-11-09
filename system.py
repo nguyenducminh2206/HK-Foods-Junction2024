@@ -2,7 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-file_path = 'HKFoods_Hackathon data 25102024.xlsx'
+#file_path = 'HKFoods_Hackathon data 25102024.xlsx'
+file_path = 'HK-Foods-Junction2024/HKFoods_Hackathon.xlsx'
 xls = pd.ExcelFile(file_path)
 
 print(xls.sheet_names)
