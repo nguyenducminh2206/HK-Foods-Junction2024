@@ -19,9 +19,11 @@ def stats_product_after_cook(sheet_name, xls, product_name, threshold):
     production = show_dataframe(sheet_name, xls)
     print(production[['Batch Info', 'Weight Change (kg)']])
     visualize_data_cooking(sheet_name, xls, product_name, threshold)
-    visualize_data_preproduction(sheet_name, xls, product_name)
+    # visualize_data_preproduction(sheet_name, xls, product_name)
 
 
-stats_product_after_cook('HOPE PRODUCTION', xls, 'HOPE', 20)
-stats_product_after_cook('FAITH PRODUCTION', xls, 'FAITH', 150)
+threshold_hope = int(input("Enter the threshold to the HOPE Product:"))
+threshold_faith = int(input("Enter the threshold to the FAITH Product: "))
 
+stats_product_after_cook('HOPE PRODUCTION', xls, 'HOPE', threshold_hope)
+stats_product_after_cook('FAITH PRODUCTION', xls, 'FAITH', threshold_faith)
