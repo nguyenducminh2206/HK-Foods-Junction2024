@@ -1,0 +1,30 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment-specific files
+.env
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Compiled files and distributions
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# Log files
+*.log
+*.out
+*.err
+
+# Virtual environments
+venv/
+.env/
+venv.bak/
+virtualenv/
