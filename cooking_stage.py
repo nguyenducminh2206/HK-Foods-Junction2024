@@ -99,15 +99,4 @@ def visualize_data_cooking(dataframe):
     plt.tight_layout()
     plt.show()
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(data[batch_info], data[percentage_loss],
-             marker='o', linestyle='-', color='orange')
-    plt.xlabel('Batch Info')
-    plt.ylabel('Percentage Loss (%)')
-    plt.title('Percentage Loss After Cooking per Batch')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
-
-
 visualize_data_cooking("HOPE PRODUCTION")
