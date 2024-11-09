@@ -41,5 +41,4 @@ def calculate_days_in_storage(dataframe):
     dataframe[days_in_storage] = dataframe['Date out storage'] - dataframe['Date in storage']
     dataframe = dataframe.drop(['Date in storage', 'Date out storage'], axis=1)
     return dataframe
-
-print(calculate_days_in_storage('FAITH STORAGE AFTER COOKING'))
+    
