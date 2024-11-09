@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-file_path = 'HKFoods_Hackathon data 25102024.xlsx'
+file_path = 'HKFoods_Hackathon data .xlsx'
 xls = pd.ExcelFile(file_path)
 
 print(xls.sheet_names)
@@ -10,6 +10,7 @@ print(xls.sheet_names)
 before_cooking = 'Before Cooking (kg)'
 after_cooking = 'After Cooking (kg)'
 batch_info = 'Batch Info'
+percentage_loss = 'Percentage Loss (%)'
 
 
 def extract_data_cooking(sheet_name):
@@ -62,14 +63,14 @@ def calculate_loss(dataframe):
     dataframe[weight_change] = dataframe[before_cooking] - \
         dataframe[after_cooking]
 
-    dataframe['Percentage Loss (%)'] = (
+    dataframe[percentage_loss] = (
         dataframe[weight_change] / dataframe[before_cooking]) * 100
 
     average_loss = np.mean(dataframe[weight_change])
     dataframe['Average Loss'] = np.nan
     dataframe.at[0, 'Average Loss'] = average_loss
 
-    average_loss_percent = np.mean(dataframe['Percentage Loss (%)'])
+    average_loss_percent = np.mean(dataframe[percentage_loss])
     dataframe['Average Loss (%)'] = np.nan
     dataframe.at[0, 'Average Loss (%)'] = average_loss_percent
 
@@ -90,7 +91,7 @@ def visualize_data_cooking(dataframe):
             label='Before Cooking (kg)', alpha=0.7)
     plt.bar(data[batch_info], data[after_cooking],
             label='After Cooking (kg)', alpha=0.7)
-    plt.xlabel('Batch Info')
+    plt.xlabel(batch_info)
     plt.ylabel('Weight (kg)')
     plt.title('Weight Before and After Cooking per Batch')
     plt.legend()
@@ -99,7 +100,7 @@ def visualize_data_cooking(dataframe):
     plt.show()
 
     plt.figure(figsize=(12, 6))
-    plt.plot(data['Batch Info'], data['Percentage Loss (%)'], marker='o', linestyle='-', color='orange')
+    plt.plot(data[batch_info], data[percentage_loss], marker='o', linestyle='-', color='orange')
     plt.xlabel('Batch Info')
     plt.ylabel('Percentage Loss (%)')
     plt.title('Percentage Loss After Cooking per Batch')
