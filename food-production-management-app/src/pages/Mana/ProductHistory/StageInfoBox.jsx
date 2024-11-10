@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material"
 
-const StageInfoBox = ({ stage, time, weight, status }) => {
+const StageInfoBox = ({ stage, time, weight, status, packageNum, avgWeight }) => {
   if (stage === "Packing Area") {
     return (
       <>
@@ -18,7 +18,9 @@ const StageInfoBox = ({ stage, time, weight, status }) => {
           }}
         >
           <Typography>{stage}</Typography>
-          <Typography>{status}</Typography>
+          <Typography>Number of packages: {packageNum}</Typography>
+          <Typography>Avg Weight: {avgWeight}/400kg</Typography>
+          <Typography>{status}% packed </Typography>
         </Box>
       </>
     )

@@ -24,9 +24,18 @@ const ProductPanes = ({ batchNumber }) => {
     return `${timeStamps[0]} - ${timeStamps[1]}`
   }
 
-  const getStatus = () => {
-    const statuses = ["finished", "unfinished"]
-    return statuses[Math.floor(Math.random() * statuses.length)]
+  const getPackageNum = () => {
+    return Math.floor(Math.random() * 41) + 380
+  }
+
+  const getAvgWeight = () => {
+    return (Math.random() * (403 - 396) + 396).toFixed(2)
+  }
+
+  const getRandomPercentage = () => {
+    const percentages = [0, 25, 50, 75, 100]
+    const randomIndex = Math.floor(Math.random() * percentages.length)
+    return percentages[randomIndex]
   }
 
   return (
@@ -69,7 +78,7 @@ const ProductPanes = ({ batchNumber }) => {
           time={createTimeString()}
           weight={`${generateRandomWeight()} kg`}
         />
-        <StageInfoBox stage={"Packing Area"} status={getStatus()} />
+        <StageInfoBox stage={"Packing Area"} packageNum={getPackageNum()} avgWeight={getAvgWeight()} status={getRandomPercentage()} />
       </Box>
     </>
   )
