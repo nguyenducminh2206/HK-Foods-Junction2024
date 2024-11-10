@@ -1,4 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material"
+import NotiBox from "./boxComponents/NotiBox"
 
 const NotiBar = () => {
   return (
@@ -15,6 +16,8 @@ const NotiBar = () => {
     >
       <Typography sx={{ fontSize: 40 }}>Notifications</Typography>
       <Divider sx={{ width: "90%", marginTop: 1 }} />
+      <NotiBox issue={"Equipment Malfunction"} from={"Packing"} priority={10}/>
+      <NotiBox issue={"Defective Product"} from={"Automated Alert System"} priority={9}/>
     </Box>
   )
 }

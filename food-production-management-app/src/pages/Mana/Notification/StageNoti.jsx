@@ -27,9 +27,9 @@ const StageNoti = ({ title }) => {
             border: "20px solid transparent",
           }}
         >
-          <Typography sx={{fontSize: 30, marginBottom: 10}}>Issues:</Typography>
-          <Typography sx={{fontSize: 30}}>From:</Typography>
-          <Typography sx={{fontSize: 30}}>Priority:</Typography>
+          <Typography sx={{fontSize: 25, marginBottom: 10}}>Issues:</Typography>
+          <Typography sx={{fontSize: 25}}>From:</Typography>
+          <Typography sx={{fontSize: 25}}>Priority:</Typography>
         </Box>
       </Box>
     </Box>

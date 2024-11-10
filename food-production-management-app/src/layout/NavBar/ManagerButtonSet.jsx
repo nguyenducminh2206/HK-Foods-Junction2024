@@ -43,7 +43,7 @@ const ManagerButtonSet = () => {
         }}
         onClick={() => (window.location.href = "/mana/data")}
       >
-        Data Analytics
+        Data Monitoring
       </Button>
       <Button
         variant="contained"

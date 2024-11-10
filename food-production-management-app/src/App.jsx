@@ -7,6 +7,7 @@ import ProductHistory from "./pages/Mana/ProductHistory/ProductHistory"
 import DataAnalytics from "./pages/Mana/DataAnalytics/DataAnalytics"
 import Training from "./pages/Employee/Training/Training"
 import Status from "./pages/Employee/WorkStatus/Status"
+import IssuePopup from "./pages/Mana/TouchScreen/IssuePopup"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/mana/data" element={<DataAnalytics />} />
           <Route path="/employee/training" element={<Training />} />
           <Route path="/employee/status" element={<Status />} />
+          <Route path="/issue1" element={<IssuePopup />} />
         </Routes>
       </Router>
     </>
