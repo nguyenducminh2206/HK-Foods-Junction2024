@@ -49,6 +49,3 @@ Install the required libraries using:
 ```
 pip install -r requirements.txts
 ```
-
-## Usage
-
