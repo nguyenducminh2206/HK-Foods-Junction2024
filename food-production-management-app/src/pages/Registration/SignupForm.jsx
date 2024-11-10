@@ -4,7 +4,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup"
 import { TextField, Button, Box } from "@mui/material"
 
 const SignupForm = () => {
-  const [role, setRole] = useState("employee")
+  const [role, setRole] = useState("Employee")
 
   const handleChange = (e) => {
     setRole(e.currentTarget.value)
@@ -22,10 +22,10 @@ const SignupForm = () => {
             aria-label="Platform"
             spacing={6}
           >
-            <ToggleButton value="employee" sx={{ height: 30, borderRadius: 5 }}>
+            <ToggleButton value="Employee" sx={{ height: 30, borderRadius: 5 }}>
               Employee
             </ToggleButton>
-            <ToggleButton value="manager" sx={{ height: 30, borderRadius: 5 }}>
+            <ToggleButton value="Manager" sx={{ height: 30, borderRadius: 5 }}>
               Manager
             </ToggleButton>
           </ToggleButtonGroup>
@@ -64,6 +64,9 @@ const SignupForm = () => {
                 backgroundColor: "#BFD3EB",
                 color: "#0C2D53",
                 borderRadius: 30,
+              }}
+              onClick={() => {
+                window.location.href = "/"
               }}
             >
               Sign up

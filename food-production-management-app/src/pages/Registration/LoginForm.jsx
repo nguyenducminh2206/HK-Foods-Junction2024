@@ -1,6 +1,17 @@
 import { TextField, Button, Box, Typography } from "@mui/material"
 
-const LoginForm = ({ handleSubmit }) => {
+const LoginForm = ({ handleSubmit, roleSelected }) => {
+  const handleLogin = () => {
+    localStorage.setItem("roleSelected", roleSelected)
+    console.log(roleSelected)
+    console.log(localStorage.getItem("roleSelected"))
+    if (roleSelected === "Employee") {
+      window.location.href = "/employee/training"
+    } else {
+      window.location.href = "/mana/noti"
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -28,6 +39,7 @@ const LoginForm = ({ handleSubmit }) => {
             color: "#0C2D53",
             borderRadius: 30,
           }}
+          onClick={handleLogin}
         >
           Log in
         </Button>
