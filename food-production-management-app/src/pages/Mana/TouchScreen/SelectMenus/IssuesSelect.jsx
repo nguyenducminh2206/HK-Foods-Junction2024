@@ -20,7 +20,7 @@ const IssuesSelect = () => {
             height: 40,
             marginLeft: 12,
             background: "white",
-            fontSize: 35,
+            fontSize: 30,
             borderRadius: "15px",
           }}
         >
@@ -31,6 +31,11 @@ const IssuesSelect = () => {
           <MenuItem value="HumanError">Human Error</MenuItem>
           <MenuItem value="MaterialDelay">Material Delay</MenuItem>
           <MenuItem value="Stockout">Out of Stock</MenuItem>
+          <MenuItem value="ProcessDelay">Process Delay</MenuItem>
+          <MenuItem value="Understaffed">Understaffed</MenuItem>
+          <MenuItem value="Overweight">Overweight</MenuItem>
+          <MenuItem value="Underweight">Underweight</MenuItem>
+          <MenuItem value="SafetyRisk">Safety Risk</MenuItem>
         </Select>
       </FormControl>
     </>

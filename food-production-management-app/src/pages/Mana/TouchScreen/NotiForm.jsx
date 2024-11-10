@@ -24,7 +24,7 @@ const NotiForm = () => {
                 marginLeft: 2,
                 width: 400,
                 background: "white",
-                fontSize: 45,
+                fontSize: 30,
               },
             }}
           ></TextField>

@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import StageInfoBox from "./StageInfoBox"
-import NavBar from "../../../layout/NavBar"
+import NavBar from "../../../layout/NavBar/NavBar"
 
 const ProductPanes = ({ batchNumber }) => {
   const generateRandomWeight = () => {

@@ -5,6 +5,8 @@ import TouchScreen from "./pages/Mana/TouchScreen/TouchScreen"
 import Notification from "./pages/Mana/Notification/Notification"
 import ProductHistory from "./pages/Mana/ProductHistory/ProductHistory"
 import DataAnalytics from "./pages/Mana/DataAnalytics/DataAnalytics"
+import Training from "./pages/Employee/Training/Training"
+import Status from "./pages/Employee/WorkStatus/Status"
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
           <Route path="/mana/noti" element={<Notification />} />
           <Route path="/mana/history" element={<ProductHistory />} />
           <Route path="/mana/data" element={<DataAnalytics />} />
-          <Route path="/employee/training" element={<DataAnalytics />} />
+          <Route path="/employee/training" element={<Training />} />
+          <Route path="/employee/status" element={<Status />} />
         </Routes>
       </Router>
     </>

@@ -2,10 +2,12 @@ import { TextField, Button, Box, Typography } from "@mui/material"
 
 const LoginForm = ({ handleSubmit, roleSelected }) => {
   const handleLogin = () => {
+    localStorage.setItem("roleSelected", roleSelected)
+    console.log(roleSelected)
+    console.log(localStorage.getItem("roleSelected"))
     if (roleSelected === "Employee") {
       window.location.href = "/employee/training"
-    } else roleSelected === "Manager"
-    {
+    } else {
       window.location.href = "/mana/noti"
     }
   }

@@ -20,7 +20,7 @@ const StagesSelect = () => {
             width: 400,
             height: 40,
             background: "white",
-            fontSize: 35,
+            fontSize: 30,
             borderRadius: "15px",
           }}
         >

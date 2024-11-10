@@ -1,8 +1,12 @@
 import { Box, Button, Typography } from "@mui/material"
 import AccountCircleIcon from "@mui/icons-material/AccountCircle"
 import { useState } from "react"
+import ManagerButtonSet from "./ManagerButtonSet"
+import EmployeeButtonSet from "./EmployeeButtonSet"
 
 const NavBar = () => {
+  const roleSelected = localStorage.getItem("roleSelected")
+  console.log(roleSelected);
   const [visible, setVisible] = useState(false)
   const handleLogout = () => {
     window.location.href = "/"
@@ -106,69 +110,14 @@ const NavBar = () => {
                 fontWeight="bold"
                 color="#CFE6FF"
               >
-                HK Food
+                {roleSelected === "Employee" ? "Chicken" : "HK Foods"}
               </Typography>
               <Typography fontSize={16} fontFamily="Inter" color="#CFE6FF">
-                Manager
+                {roleSelected === "Employee" ? "Employee" : "Manager"}
               </Typography>
             </Box>
           </Box>
-          <Button
-            variant="contained"
-            sx={{
-              marginBottom: 8,
-              background: "#BFD3EB",
-              color: "#0C2D53",
-              width: 240,
-              height: 50,
-              borderRadius: 10,
-            }}
-            onClick={() => (window.location.href = "/mana/noti")}
-          >
-            Notifications
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              marginBottom: 8,
-              background: "#BFD3EB",
-              color: "#0C2D53",
-              width: 240,
-              height: 50,
-              borderRadius: 10,
-            }}
-            onClick={() => (window.location.href = "/mana/history")}
-          >
-            Product History
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              marginBottom: 8,
-              background: "#BFD3EB",
-              color: "#0C2D53",
-              width: 240,
-              height: 50,
-              borderRadius: 10,
-            }}
-            onClick={() => (window.location.href = "/mana/data")}
-          >
-            Data Analytics
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              marginBottom: 8,
-              background: "#BFD3EB",
-              color: "#0C2D53",
-              width: 240,
-              height: 50,
-              borderRadius: 10,
-            }}
-            onClick={() => (window.location.href = "/mana/touchscreen")}
-          >
-            On Site Device View
-          </Button>
+          {roleSelected === "Manager" ? <ManagerButtonSet /> : <EmployeeButtonSet />}
         </Box>
         <Box
           sx={{

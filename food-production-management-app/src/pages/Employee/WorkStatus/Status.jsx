@@ -1,11 +1,12 @@
 import NavBar from "../../../layout/NavBar/NavBar"
 
-const DataAnalytics = () => {
+const Status = () => {
   return (
     <>
       <NavBar />
+      <h1>Status</h1>
     </>
   )
 }
 
-export default DataAnalytics
+export default Status
