@@ -1,8 +1,10 @@
-import { Typography } from "@mui/material"
+import { Typography, ToggleButtonGroup, ToggleButton } from "@mui/material"
 import LoginForm from "./LoginForm"
 import Box from "@mui/material/Box"
+import { useState } from "react"
 
 const Login = () => {
+  const [role, setRole] = useState("Employee")
   const handleSubmit = () => {
     console.log("submitted")
   }
@@ -31,6 +33,40 @@ const Login = () => {
       </Typography>
       <Box
         sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 2,
+        }}
+      >
+        <Typography
+          align="center"
+          fontSize={20}
+          fontFamily="Inter"
+          fontWeight="bold"
+          sx={{ marginRight: 2 }}
+        >
+          Role:
+        </Typography>
+        <ToggleButtonGroup
+          value={role}
+          exclusive
+          onChange={(event) => {
+            console.log(event.target.value);
+            setRole(event.target.value)
+          }}
+          aria-label="role"
+        >
+          <ToggleButton value="Employee" aria-label="employee">
+            Employee
+          </ToggleButton>
+          <ToggleButton value="Manager" aria-label="manager">
+            Manager
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+      <Box
+        sx={{
           width: 600,
           height: 300,
           background: "#EBEEF6",
@@ -52,7 +88,7 @@ const Login = () => {
         >
           Log in
         </Typography>
-        <LoginForm handleSubmit={handleSubmit} />
+        <LoginForm handleSubmit={handleSubmit} roleSelected={role} />
       </Box>
     </Box>
   )

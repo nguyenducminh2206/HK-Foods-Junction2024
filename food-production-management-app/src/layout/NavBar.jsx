@@ -16,30 +16,30 @@ const NavBar = () => {
   if (!visible) {
     return (
       <Button
-      onClick={toggleNavBar}
-      sx={{
-        position: "fixed",
-        bottom: 10,
-        left: 10,
-        background: "#BFD3EB",
-        color: "#0C2D53",
-        width: 50,
-        height: 50,
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+        onClick={toggleNavBar}
+        sx={{
+          position: "fixed",
+          bottom: 10,
+          left: 10,
+          background: "#BFD3EB",
+          color: "#0C2D53",
+          width: 50,
+          height: 50,
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 96 960 960"
-        width="24"
-        fill="#0C2D53"
-      >
-        <path d="M120 816v-60h720v60H120Zm0-180v-60h720v60H120Zm0-180v-60h720v60H120Z" />
-      </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 96 960 960"
+          width="24"
+          fill="#0C2D53"
+        >
+          <path d="M120 816v-60h720v60H120Zm0-180v-60h720v60H120Zm0-180v-60h720v60H120Z" />
+        </svg>
       </Button>
     )
   }
@@ -123,7 +123,7 @@ const NavBar = () => {
               height: 50,
               borderRadius: 10,
             }}
-            onClick={() => (window.location.href = "/noti")}
+            onClick={() => (window.location.href = "/mana/noti")}
           >
             Notifications
           </Button>
@@ -137,7 +137,7 @@ const NavBar = () => {
               height: 50,
               borderRadius: 10,
             }}
-            onClick={() => (window.location.href = "/history")}
+            onClick={() => (window.location.href = "/mana/history")}
           >
             Product History
           </Button>
@@ -151,7 +151,7 @@ const NavBar = () => {
               height: 50,
               borderRadius: 10,
             }}
-            onClick={() => (window.location.href = "/data")}
+            onClick={() => (window.location.href = "/mana/data")}
           >
             Data Analytics
           </Button>
@@ -165,7 +165,7 @@ const NavBar = () => {
               height: 50,
               borderRadius: 10,
             }}
-            onClick={() => (window.location.href = "/touchscreen")}
+            onClick={() => (window.location.href = "/mana/touchscreen")}
           >
             On Site Device View
           </Button>

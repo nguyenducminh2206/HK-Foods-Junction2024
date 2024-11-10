@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material"
-import NavBar from "../../layout/NavBar"
+import NavBar from "../../../layout/NavBar"
 import SearchBar from "./SearchBar"
 import ProductPanes from "./ProductPanes"
 

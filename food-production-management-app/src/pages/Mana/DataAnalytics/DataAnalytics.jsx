@@ -1,4 +1,4 @@
-import NavBar from "../../layout/NavBar"
+import NavBar from "../../../layout/NavBar"
 
 const DataAnalytics = () => {
   return (

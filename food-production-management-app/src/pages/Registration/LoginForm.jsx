@@ -1,6 +1,15 @@
 import { TextField, Button, Box, Typography } from "@mui/material"
 
-const LoginForm = ({ handleSubmit }) => {
+const LoginForm = ({ handleSubmit, roleSelected }) => {
+  const handleLogin = () => {
+    if (roleSelected === "Employee") {
+      window.location.href = "/employee/training"
+    } else roleSelected === "Manager"
+    {
+      window.location.href = "/mana/noti"
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -28,7 +37,7 @@ const LoginForm = ({ handleSubmit }) => {
             color: "#0C2D53",
             borderRadius: 30,
           }}
-          onClick={() => window.location.href = "/noti"}
+          onClick={handleLogin}
         >
           Log in
         </Button>
