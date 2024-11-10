@@ -1,9 +1,9 @@
-import employeeNavBar from "../../layout/employeeNavBar"
+import NavBar from "../../layout/employeeNavBar"
 
 const Employee = () => {
   return (
     <>
-      <employeeNavBar />
+      <NavBar />
     </>
   )
 }
