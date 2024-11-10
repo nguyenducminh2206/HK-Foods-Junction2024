@@ -3,7 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle"
 import { useState } from "react"
 
 const NavBar = () => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
   const handleLogout = () => {
     window.location.href = "/"
   }
