@@ -6,11 +6,14 @@ import ProductPanes from "./ProductPanes"
 const ProductHistory = () => {
   return (
     <>
-     <SearchBar />
-     <Typography sx={{ fontSize: 50, fontWeight: 'bold', marginBottom: 3 }}>Today</Typography>
-    {[...Array(4)].map((_, index) => (
-      <ProductPanes key={index} batchNumber={1752 - index} />
-    ))}
+      <NavBar />
+      <SearchBar />
+      <Typography sx={{ fontSize: 50, fontWeight: "bold", marginBottom: 3 }}>
+        Today
+      </Typography>
+      {[...Array(4)].map((_, index) => (
+        <ProductPanes key={index} batchNumber={1752 - index} />
+      ))}
     </>
   )
 }

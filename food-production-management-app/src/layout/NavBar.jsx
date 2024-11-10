@@ -3,7 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle"
 import { useState } from "react"
 
 const NavBar = () => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const handleLogout = () => {
     window.location.href = "/"
   }
@@ -14,7 +14,34 @@ const NavBar = () => {
   }
 
   if (!visible) {
-    return <h1>test</h1>
+    return (
+      <Button
+      onClick={toggleNavBar}
+      sx={{
+        position: "fixed",
+        bottom: 10,
+        left: 10,
+        background: "#BFD3EB",
+        color: "#0C2D53",
+        width: 50,
+        height: 50,
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 96 960 960"
+        width="24"
+        fill="#0C2D53"
+      >
+        <path d="M120 816v-60h720v60H120Zm0-180v-60h720v60H120Zm0-180v-60h720v60H120Z" />
+      </svg>
+      </Button>
+    )
   }
 
   return (
@@ -128,20 +155,66 @@ const NavBar = () => {
           >
             Data Analytics
           </Button>
+          <Button
+            variant="contained"
+            sx={{
+              marginBottom: 8,
+              background: "#BFD3EB",
+              color: "#0C2D53",
+              width: 240,
+              height: 50,
+              borderRadius: 10,
+            }}
+            onClick={() => (window.location.href = "/touchscreen")}
+          >
+            On Site Device View
+          </Button>
         </Box>
-        <Button
-          onClick={handleLogout}
+        <Box
           sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             marginBottom: 2,
-            background: "#BFD3EB",
-            color: "#0C2D53",
-            width: 120,
-            height: 40,
-            borderRadius: 10,
           }}
         >
-          Logout
-        </Button>
+          <Button
+            onClick={handleLogout}
+            sx={{
+              background: "#BFD3EB",
+              color: "#0C2D53",
+              width: 120,
+              height: 40,
+              borderRadius: 10,
+              marginRight: 1,
+            }}
+          >
+            Logout
+          </Button>
+          <Button
+            onClick={toggleNavBar}
+            sx={{
+              background: "#BFD3EB",
+              color: "#0C2D53",
+              width: 50,
+              height: 50,
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 96 960 960"
+              width="24"
+              fill="#0C2D53"
+            >
+              <path d="M120 816v-60h720v60H120Zm0-180v-60h720v60H120Zm0-180v-60h720v60H120Z" />
+            </svg>
+          </Button>
+        </Box>
       </Box>
     </>
   )

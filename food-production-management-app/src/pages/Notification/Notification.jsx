@@ -6,6 +6,7 @@ const Notification = () => {
   const headers = ["Preproduction", "Cooking", "Storage", "Packing Area"]
   return (
     <>
+      <NavBar />
       <Box sx={{ display: "flex", gap: "10px" }}>
         {headers.map((item, index) => (
           <StageNoti key={index} title={item} />

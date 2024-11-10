@@ -1,22 +1,23 @@
 import { Box, Typography } from "@mui/material"
 import StageInfoBox from "./StageInfoBox"
+import NavBar from "../../layout/NavBar"
 
 const ProductPanes = ({ batchNumber }) => {
   const generateRandomWeight = () => {
-    return Math.floor(Math.random() * 11) + 195;
-  };
+    return Math.floor(Math.random() * 11) + 195
+  }
 
   const generateTimeStamps = () => {
-    const pad = (num) => (num < 10 ? '0' : '') + num;
+    const pad = (num) => (num < 10 ? "0" : "") + num
 
-    const now = new Date();
-    const firstTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    const now = new Date()
+    const firstTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`
 
-    now.setMinutes(now.getMinutes() + 15);
-    const secondTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    now.setMinutes(now.getMinutes() + 15)
+    const secondTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`
 
-    return [firstTime, secondTime];
-  };
+    return [firstTime, secondTime]
+  }
 
   const createTimeString = () => {
     const timeStamps = generateTimeStamps()
@@ -24,12 +25,13 @@ const ProductPanes = ({ batchNumber }) => {
   }
 
   const getStatus = () => {
-    const statuses = ["finished", "unfinished"];
-    return statuses[Math.floor(Math.random() * statuses.length)];
-  };
+    const statuses = ["finished", "unfinished"]
+    return statuses[Math.floor(Math.random() * statuses.length)]
+  }
 
   return (
     <>
+      <NavBar />
       <Box
         sx={{
           display: "flex",
@@ -57,9 +59,17 @@ const ProductPanes = ({ batchNumber }) => {
           time={createTimeString()}
           weight={`${generateRandomWeight()} kg`}
         />
-        <StageInfoBox stage={"Cooking"} time={createTimeString()} weight={`${generateRandomWeight()} kg`}/>
-        <StageInfoBox stage={"Storage"} time={createTimeString()} weight={`${generateRandomWeight()} kg`}/>
-        <StageInfoBox stage={"Packing Area"} status={getStatus()}/>
+        <StageInfoBox
+          stage={"Cooking"}
+          time={createTimeString()}
+          weight={`${generateRandomWeight()} kg`}
+        />
+        <StageInfoBox
+          stage={"Storage"}
+          time={createTimeString()}
+          weight={`${generateRandomWeight()} kg`}
+        />
+        <StageInfoBox stage={"Packing Area"} status={getStatus()} />
       </Box>
     </>
   )
