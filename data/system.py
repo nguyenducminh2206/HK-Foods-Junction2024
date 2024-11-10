@@ -17,13 +17,13 @@ def stats_product_after_cook(sheet_name, xls, product_name, threshold):
         product_name (_type_): _description_
     """
     production = show_dataframe(sheet_name, xls)
-    print(production[['Batch Info', 'Weight Change (kg)']])
+    print(production[['Batch Info', 'Weight Change (kg)','Average Loss']])
     visualize_data_cooking(sheet_name, xls, product_name, threshold)
     # visualize_data_preproduction(sheet_name, xls, product_name)
 
 
-threshold_hope = int(input("Enter the threshold to the HOPE Product:"))
-threshold_faith = int(input("Enter the threshold to the FAITH Product: "))
+threshold_hope = int(input("Enter the difference threshold to the HOPE Product: "))
+threshold_faith = int(input("Enter the difference threshold to the FAITH Product: "))
 
 stats_product_after_cook('HOPE PRODUCTION', xls, 'HOPE', threshold_hope)
 stats_product_after_cook('FAITH PRODUCTION', xls, 'FAITH', threshold_faith)

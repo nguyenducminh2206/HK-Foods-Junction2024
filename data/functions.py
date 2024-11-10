@@ -150,7 +150,7 @@ def visualize_data_cooking(sheet_name, xls, product_name='', threshold=0):
     plt.xlabel('Batch Info (Description)')
     plt.ylabel('Weight (kg)')
     plt.title(
-        f'Weight Before and After Cooking of {product_name} Production per Batch')
+        f'Weight Before and After Cooking of {product_name} Production Above {threshold} kg Difference')
     plt.legend()
     plt.xticks(rotation=45)
     plt.tight_layout()
