@@ -11,6 +11,11 @@ This project is designed to optimize and monitor the food production chain at HK
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Food Production Factory Management Tool](#food-production-factory-management-tool)
+- [Accessing the App](#accessing-the-app)
+- [Requirement](#requirements)
+- [Installations](#installation)
+- [Usage](#usage)
 
 ## Features
 
@@ -52,3 +57,40 @@ pip install -r requirements.txts
 
 ## Usage
 
+# Food Production Factory Management Tool
+
+This web application is designed to streamline operations in a food production factory. It provides real-time notifications, enables better communication across assembly line stations, and helps reduce food waste by managing portions and weights accurately. Employees and managers can use this tool to track production stages, report issues, and optimize efficiency.
+
+### Accessing the App
+
+The app is deployed and can be accessed via [this link](https://wondrous-elf-555a64.netlify.app/).
+
+### Requirements
+
+To run the app locally, ensure you have the following installed:
+
+- **Node.js** and **npm**: For package management and running the development environment.
+- **MongoDB** (if using a local database): The app may require a MongoDB instance for data storage.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd food-production-factory-tool
+
+2. Install dependencies
+  ```bash
+  npm install
+
+3. Start the application
+  ```bash
+  npm run dev
+
+4. Access the app locally at http://localhost:5173
+
+### Usage
+
+Employees: Use touch screens at each station to notify other stages of issues in real time. Track portion weights and adjust as needed.
+
+Managers: View notifications from all stations, monitor production flow, and oversee waste reduction efforts.
