@@ -55,8 +55,6 @@ Install the required libraries using:
 pip install -r requirements.txts
 ```
 
-## Usage
-
 # Food Production Factory Management Tool
 
 This web application is designed to streamline operations in a food production factory. It provides real-time notifications, enables better communication across assembly line stations, and helps reduce food waste by managing portions and weights accurately. Employees and managers can use this tool to track production stages, report issues, and optimize efficiency.
